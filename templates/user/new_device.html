@@ -1,0 +1,22 @@
+<html>
+{% with title="New device pair" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h1>Pair</h1>
+        <form method="POST">
+            <label for="uuidInput">ID van je findlock (achterkant findlock)</label>
+            <input type="text" name="uuidInput" id="uuidInput"><br>
+
+            <label for="pincodeInput">Pincode van je findlock (achterkant findlock)</label>
+            <input type="text" name="pincodeInput" id="pincodeInput"><br>
+            <button class="button" type="submit">pair</button>
+
+        </form>
+    </div>
+</body>
+
+</html>

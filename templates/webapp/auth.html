@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% with title="Filo - Login"%}
+  {% include 'webapp/_base_head.html' %}
+  {% endwith %}
+</head>
+
+<body ontouchstart="">
+  <div class="background"></div>
+  <div id="desktop-wrap">
+    <div class="login-details">
+      <h2 class="h2-main">Login</h2>
+      <form method="POST">
+      <input type="email" name="emailInput" placeholder="Email" />
+      <input type="password" name="passwordInput" placeholder="Password" />
+      <button class="button white onclick_home">
+        <p class="p-main">Login</p>
+      </button>
+      </form>
+      <!--<p class="p-onjuist">Login onjuist</p> //als login onjuist is, krijg je een new page met een bericht-->
+    </div>
+    <div class="login-details">
+      <h2 class="h2-main">Login using Google</h2>
+      <p class="p-main">Google button placeholder</p>
+    </div>
+    <p class="p-sub onclick_auth_register">
+      Register an account
+    </p>
+  </div>
+  {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

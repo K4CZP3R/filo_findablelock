@@ -1,0 +1,7 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'DatabaseHandler', 'x':82, 'y':443, 'width':160, 'height':202, 'attrs': 'collection|client|debug', 'meths': '__init__|delete_one|find_one|drop_all|insert_one|update_one'}
+{'type':'umlshape', 'id':'Findlock', 'x':72, 'y':233, 'width':178, 'height':144, 'attrs': '', 'meths': 'delete_findlock|__init__|update_findlock|create_findlock|__does_findlock_exist|get_findlock'}
+{'type':'umlshape', 'id':'User', 'x':369, 'y':472, 'width':146, 'height':144, 'attrs': '', 'meths': '__init__|__does_user_exist|create_user|delete_user|update_user|get_user'}
+{'type':'edge', 'id':'User_to_DatabaseHandler', 'source':'User', 'target':'DatabaseHandler', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Findlock_to_DatabaseHandler', 'source':'Findlock', 'target':'DatabaseHandler', 'uml_edge_type': 'generalisation'}

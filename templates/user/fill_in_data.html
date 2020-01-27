@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Bijna klaar1"%}
+    {% include 'webapp/_base_head.html' %}
+    {% endwith %}
+</head>
+
+<body ontouchstart="">
+    <div class="background"></div>
+    <div class="login-details">
+        <h2 class="h2-main">Bijna klaar</h2>
+        <form method="POST">
+            {% for i in missing_data %}
+            <input type="text" name="{{i}}Input" placeholder="{{i}}"/>
+            {% endfor %}
+            <button class="button white"">
+                <p class="p-main">Werk bij</p>
+            </button>
+        </form>
+    </div>
+    
+</body>
+
+</html>

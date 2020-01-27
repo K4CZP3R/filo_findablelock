@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Filo - User Info"%} {% include 'webapp/_base_head_user.html' %} {% endwith %}
+</head>
+
+<body ontouchstart="">
+    <div class="background"></div>
+
+    <div id="desktop-wrap">
+        <div class="title">
+            <p class="p-title">Account</p>
+        </div>
+
+        <div class="header">
+            <img class="header-icon" src="/static/images/account.svg" />
+            <div class="header-wrap">
+                <div class="info-wrap">
+                    <p class="p-sub">{{Session.User.first_name}} {{Session.User.surname}}</p>
+                    <p class="p-sub">{{Session.User.first_name}}#{{Session.User.friend_code}}</p>
+                    <p class="p-sub">{{findlocks_n}} findlocks</p>
+                </div>
+                <div class="edit">
+                    <p class="p-sub button-text">Edit</p>
+                </div>
+            </div>
+        </div>
+
+
+        {% if findlocks_n > 0 %}
+        <div class="share-wrap">
+            <p class="p-sub">Share</p>
+            <p class="p-sub">Give other people access to your bike</p>
+            <div class="shareFilo-wrap">
+                <input type="text" placeholder="#1A2B3C" id="shareFilo" />
+                <div class="submit round" onclick="allowName();">
+                    <p class="p-sub submit-text">Add</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="menubar">
+            <img class="menu-icon onclick_home" src="/static/images/menu-map.svg" />
+            <img class="menu-icon onclick_fingerprint" src="/static/images/menu-finger.svg" />
+            <img class="menu-icon onclick_profile" src="/static/images/menu-profile.svg" />
+            <img class="menu-icon onclick_lock" src="/static/images/menu-lock.svg" />
+            <img class="menu-icon onclick_light" src="/static/images/menu-led.svg" />
+            <img class="menu-icon onclick_settings" src="/static/images/menu-settings.svg" />
+        </div>
+    </div>
+    {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

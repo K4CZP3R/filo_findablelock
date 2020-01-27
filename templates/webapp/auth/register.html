@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% with title="Filo - Register"%}
+  {% include 'webapp/_base_head.html' %}
+  {% endwith %}
+</head>
+
+<body ontouchstart="">
+  <div class="background"></div>
+  <div id="desktop-wrap">
+    <div class="login-details">
+      <h2 class="h2-main">Register an account</h2>
+      <form method="POST">
+        <input type="email" name="emailInput" placeholder="Email" />
+        <input type="password" name="passwordInput" placeholder="Password" />
+        <input type="password" name="passwordInput2" placeholder="Repeat password" />
+        <button class="button white onclick_user_update">
+          <p class="p-main" ;>
+            Register
+          </p>
+        </button>
+        <!--<p class="p-onjuist">Geef een geldige email op</p>
+          <p class="p-onjuist">Wachtwoorden zijn verschillend</p>
+          <p class="p-onjuist">Email bestaat al</p>
+          Kijk auth.html opmerking!
+          -->
+      </form>
+    </div>
+    <p class="p-sub onclick_auth">
+      Login instead
+    </p>
+  </div>
+  {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

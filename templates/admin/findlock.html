@@ -1,0 +1,32 @@
+<html>
+{% with title="Findlock - "+findlock.device_uuid %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h1>Findlock - {{findlock.device_uuid}}</h1>
+        <form method="POST" action="{{findlock.device_uuid}}/update">
+            {% for i in findlock_entries %}
+            <label for="{{i}}"">{{i}}</label>    
+            <input type="text" name="{{i}}" value="{{findlock_dict[i]}}">
+            <br>
+            {% endfor %}
+            <button class="button">Update</button>
+        </form>
+
+        <h2>Add gps location</h2>
+        <form method="POST" action="{{findlock.device_uuid}}/add_gps">
+            <div class="form-group">
+                <label for="latInput">Lat</label>
+                <input type="text" name="latInput" id="latInput">
+                <label for="lngInput">Lng</label>
+                <input type="text" name="lngInput" id="lngInput">
+            </div>
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

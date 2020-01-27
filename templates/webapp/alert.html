@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Message" %} {% include 'webapp/_base_head.html' %} {% endwith %}
+    <meta http-equiv="refresh" content="{{r_time}}; url={{r_url}}" />
+
+</head>
+
+<body ontouchstart="">
+    <div class="background-popup"></div>
+
+    <div class="whitebackground">
+        <img class=checkmark src="/static/images/filo-image.png" />
+        <div class="text-wrap">
+            <p class=question>{{title}}</p>
+            <p class="question">{{content}}</p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

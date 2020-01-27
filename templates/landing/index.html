@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Your findable lock!"%}
+    {% include '_base_head.html' %}
+    {% endwith %}
+</head>
+
+<body ontouchstart="">
+    <div class="background"></div>
+    <div id="desktop-wrap">
+      <p class="p-main">
+        Version: {{config.get_version()}}
+      </p>
+      <img class="filoslot" src="/static/images/filo-image.png" />
+      <div class="button white onclick_auth">
+        <p class="p-main">Login</p>
+      </div>
+      <p class="p-sub onclick_auth_register">
+        Register an account
+      </p>
+    </div>
+  </body>
+
+</html>

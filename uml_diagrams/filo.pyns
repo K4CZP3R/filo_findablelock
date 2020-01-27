@@ -1,0 +1,20 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'User', 'x':619, 'y':651, 'width':114, 'height':186, 'attrs': 'email|user_uuid|first_name|password_hash|surname|phone_number', 'meths': '__init__|toDict'}
+{'type':'umlshape', 'id':'GpsLocation', 'x':59, 'y':205, 'width':120, 'height':138, 'attrs': 'time|lng|lat', 'meths': '__init__|toDict'}
+{'type':'umlshape', 'id':'GpsLocationHistory', 'x':23, 'y':434, 'width':190, 'height':154, 'attrs': 'locations', 'meths': 'get_location_count|add_location|__init__|toDict|get_location'}
+{'type':'umlshape', 'id':'FindLock', 'x':40, 'y':665, 'width':154, 'height':154, 'attrs': 'device_uuid|master_pincode|friendly_name|GpsLocationHistory', 'meths': '__init__|toDict'}
+{'type':'umlshape', 'id':'FindLockPermission', 'x':338, 'y':658, 'width':190, 'height':170, 'attrs': 'device_uuid|allowed_uuids|master_uuid', 'meths': 'addAllowedUuid|__init__|toDict|removeAllowedUuid'}
+{'type':'umlshape', 'id':'Session', 'x':636, 'y':446, 'width':82, 'height':122, 'attrs': 'logged_in|User', 'meths': '__init__|toDict'}
+{'type':'umlshape', 'id':'FiloDatabase', 'x':931, 'y':63, 'width':258, 'height':458, 'attrs': 'debug|findlock_permissions|users|client|database|findlocks', 'meths': 'does_user_exist|create_user|get_findlock_permmission|update_user|allowed_to_this_findlock|allow_user_to_use_findlock|get_user|get_findlock|create_findlock|__init__|delete_findlock|does_findlock_exist|update_findlock|create_dummy_data|drop_all|update_findlock_permission|pair_findlock_with_master|master_of_findlock|does_findlock_permissions_exist'}
+{'type':'umlshape', 'id':'pymongo.MongoClient', 'x':1283, 'y':135, 'width':200, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'FiloDebugTypes', 'x':1547, 'y':323, 'width':150, 'height':112, 'attrs': 'ERROR|DEBUG|VERBOSE|WARNING', 'meths': ''}
+{'type':'umlshape', 'id':'FiloDebug', 'x':1541, 'y':65, 'width':162, 'height':234, 'attrs': 'module_name|print_to_file|log_file|allowed_debug_types', 'meths': '__init__|init_log_file|print_v|print_d|print_e|print_w|out'}
+{'type':'edge', 'id':'GpsLocationHistory_to_FindLock', 'source':'GpsLocationHistory', 'target':'FindLock', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'GpsLocation_to_GpsLocationHistory', 'source':'GpsLocation', 'target':'GpsLocationHistory', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'User_to_Session', 'source':'User', 'target':'Session', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'pymongo.MongoClient_to_FiloDatabase', 'source':'pymongo.MongoClient', 'target':'FiloDatabase', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'FiloDebug_to_FiloDatabase', 'source':'FiloDebug', 'target':'FiloDatabase', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'FiloDebugTypes_to_FiloDebug', 'source':'FiloDebugTypes', 'target':'FiloDebug', 'uml_edge_type': 'association'}
+{'type':'edge', 'id':'User_to_FindLockPermission', 'source':'User', 'target':'FindLockPermission', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'FindLock_to_FindLockPermission', 'source':'FindLock', 'target':'FindLockPermission', 'uml_edge_type': 'composition'}

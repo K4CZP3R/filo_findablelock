@@ -1,0 +1,19 @@
+<html>
+{% with title="Admin landing" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h2>
+            <a class="button" href="{{AdminRoutes.users.route_path}}">Users</a>
+            <br>
+            <a class="button" href="{{AdminRoutes.findlocks.route_path}}">Findlocks</a>
+            <br>
+            <a class="button" href="{{AdminRoutes.db_options.route_path}}">Database options</a>
+        </h2>
+    </div>
+</body>
+
+</html>

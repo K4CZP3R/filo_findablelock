@@ -1,0 +1,41 @@
+<html>
+{% with title="Users" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div>
+        <h1>Users</h1>
+        <table>
+            <tr>
+                {% for i in UsersEntries %}
+                <th>{{i}}</th>
+                {% endfor %}
+                <th>Options</th>
+            </tr>
+            {% for us in Users %}
+            <tr>
+                <td>{{us.first_name}}</td>
+                <td>{{us.surname}}</td>
+                <td>{{us.email}}</td>
+                <td>{{us.password_hash}}</td>
+                <td>{{us.phone_number}}</td>
+                <td>{{us.nfc_id}}</td>
+                <td>{{us.finger_id}}</td>
+                <td>{{us.user_uuid}}</td>
+                <td>{{us.google_user_id}}</td>
+                <td>{{us.facebook_user_id}}</td>
+                <td><img src="{{us.avatar_link}}"/></td>
+                <td>{{us.verified}}</td>
+                <td>{{us.friend_code}}</td>
+                <td>{{us.is_admin}}</td>
+                <td><a class="button" href="user/{{us.user_uuid}}">Edit</a>
+                    <a class="button" href="user/{{us.user_uuid}}/delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% with title="Filo - Settings"%}
+  {% include 'webapp/_base_head_user.html' %}
+  {% endwith %}
+</head>
+
+<body ontouchstart="">
+  <div class="background"></div>
+  <div id="desktop-wrap">
+    <div class="title">
+      <p class="p-title">Settings</p>
+    </div>
+
+    <div class="settings">
+      <div class="element notifications">
+        <div class="settings-info-wrap">
+          <img class="settings-icon" src="/static/images/notification.svg" />
+          <p class="p-sub noti">Notifications</p>
+        </div>
+      </div>
+      <div class="element general">
+        <div class="settings-info-wrap">
+          <img class="settings-icon" src="/static/images/gear.svg" />
+          <p class="p-sub">General</p>
+        </div>
+      </div>
+      <div class="element privacy">
+        <div class="settings-info-wrap">
+          <img class="settings-icon" src="/static/images/lock.svg" />
+          <p class="p-sub">Privacy</p>
+        </div>
+      </div>
+      <div class="element block">
+        <div class="settings-info-wrap">
+          <img class="settings-icon" src="/static/images/block.svg" />
+          <p class="p-sub">Block</p>
+        </div>
+      </div>
+      {% if session.User.is_admin %}
+      <div class="element privacy onclick_admin_menu">
+        <div class="settings-info-wrap">
+          <img class="settings-icon" src="/static/images/lock.svg" />
+          <p class="p-sub">Admin Menu</p>
+        </div>
+      </div>
+      {% endif %}
+      <div class="element-sub logout onclick_logout">
+        <div class="settings-info-wrap">
+          <img class="settings-icon" src="/static/images/logout.svg" />
+          <p class="p-sub">Log out</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menubar">
+      <img class="menu-icon onclick_home" src="/static/images/menu-map.svg" />
+      <img class="menu-icon onclick_fingerprint" src="/static/images/menu-finger.svg" />
+      <img class="menu-icon onclick_profile" src="/static/images/menu-profile.svg" />
+      <img class="menu-icon onclick_lock" src="/static/images/menu-lock.svg" />
+      <img class="menu-icon onclick_light" src="/static/images/menu-led.svg" />
+      <img class="menu-icon onclick_settings" src="/static/images/menu-settings.svg" />
+    </div>
+  </div>
+  {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

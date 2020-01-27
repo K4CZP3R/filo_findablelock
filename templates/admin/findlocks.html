@@ -1,0 +1,33 @@
+<html>
+{% with title="Findlocks" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div>
+        <h1>Findlocks</h1>
+        <table>
+            <tr>
+                {% for i in FindlocksEntires %}
+                <th>{{i}}</th>
+                {% endfor %}
+                <th>Options</th>
+            </tr>
+            {% for fl in Findlocks %}
+            <tr>
+                <td>{{fl.friendly_name}}</td>
+                <td>{{fl.GpsLocationHistory.toDict()}}</td>
+                <td>{{fl.master_pincode}}</td>
+                <td>{{fl.Event.toDict()}}</td>
+                <td>{{fl.device_uuid}}</td>
+                <td>{{fl.FindlockPermission.toDict()}}</td>
+                <td><a class="button" href="findlock/{{fl.device_uuid}}">Edit</a>
+                    <a class="button"  href="findlock/{{fl.device_uuid}}/delete">delete</aclass="button"></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Filo - Your findable lock!"%} {% include 'webapp/_base_head_user.html' %} {% endwith %}
+    <script async differ type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAClXIExou7iQYu86wCiVV43mLw90kDQ0o&callback=initMap"></script>
+</head>
+
+<body ontouchstart="">
+
+    <div>
+        <img class="Logo" src="/static/images/FIloLogo.svg">
+    </div>
+
+
+    </div>
+    <div class="background"></div>
+    <div id="map"></div>
+
+
+
+
+
+    <div id="desktop-wrap">
+        <div class="current-location">
+            <p class="address" id="locationPlaceholder">STREET</p>
+            <p class="distance" id="distancePlaceholder">DISTANCE</p>
+        </div>
+
+        <div class="menubar">
+            <img class="menu-icon onclick_home" src="/static/images/menu-map.svg" />
+            <img class="menu-icon onclick_fingerprint" src="/static/images/menu-finger.svg" />
+            <img class="menu-icon onclick_profile" src="/static/images/menu-profile.svg" />
+            <img class="menu-icon onclick_lock" src="/static/images/menu-lock.svg" />
+            <img class="menu-icon onclick_light" src="/static/images/menu-led.svg" />
+            <img class="menu-icon onclick_settings" src="/static/images/menu-settings.svg" />
+        </div>
+    </div>
+    {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

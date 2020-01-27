@@ -1,0 +1,13 @@
+<html>
+{% with title="Admin - Logs" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center" >
+        <iframe style="width: 100%; height: 100%;" src="{{AdminRoutes.logs.route_path}}"></iframe>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Filo - Confirm friendship" %} {% include 'webapp/_base_head.html' %} {% endwith %}
+</head>
+
+<body ontouchstart="">
+    <div class="background-popup"></div>
+
+    <div class="whitebackground">
+        <img class="checkmark" src="/static/images/checkmark.svg" />
+        <div class="text-wrap">
+            <p class="question" id="addFriend">""</p>
+        </div>
+
+
+        <div class="buttons">
+            <form method="POST">
+                <input type="hidden" name="friendCode" id="friendCodeForm" value="to_be_filled">
+                <div class="checkmarkbutton" onclick="javascript:this.parentNode.submit();">
+                    <img class="checkmark-klein" src="/static/images/checkmark.svg" />
+                </div>
+            </form>
+            <div class="crossmark onclick_profile">
+                <img class="checkmark-klein" src="/static/images/crossmark.svg" />
+            </div>
+        </div>
+    </div>
+    <p class="confirm-invis"></p>
+    {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

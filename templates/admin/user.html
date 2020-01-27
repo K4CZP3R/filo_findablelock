@@ -1,0 +1,34 @@
+<html>
+{% with title="User - "+user.user_uuid %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h1>User - {{user.user_uuid}}</h1>
+        <form method="POST" action="{{user.user_uuid}}/update">
+            {% for i in user_entries %}
+            <label for="{{i}}">{{i}}</label>    
+            <input type="text" name="{{i}}" value="{{user_dict[i]}}">
+            <br>
+            {% endfor %}
+            <button class="button">Update</button>
+        </form>
+
+
+        <h2>Send mail to {{user.email}}</h2>
+        <form method="POST" action="{{user.user_uuid}}/send_mail">
+            <div class="form-group">
+                <label for="subjectInput">Subject</label>
+                <input type="text" name="subjectInput" id="subjectInput">
+                <br>
+                <label for="contentInput">Content</label>
+                <input type="text" name="contentInput" id="contentInput">
+            </div>
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<html>
+{% with title=findlock.friendly_name %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h1>Info</h1>
+        <p><b>Name: </b>{{findlock.friendly_name}}<br>
+            <b>Pincode: </b>{{findlock.master_pincode}}<br>
+            <b>ID: </b>{{findlock.device_uuid}}</p>
+        <h1>State</h1>
+        <p>
+            <b>Last event type: </b><a id="event_type">{{findlock.Event.type}}</a><br>
+            <b>Last event executed: </b><a id="event_executed">{{findlock.Event.executed}}</a><br>
+            <b>Last event time: </b><a class="filoUnixTime" id="event_time">{{findlock.Event.created_at}}</a>
+
+        </p>
+        <button id="lights" onclick="let_it_shine('{{findlock.device_uuid}}')" class="button">Let it shine</button>
+        <button id="unlock" onclick="change_state_findlock('{{findlock.device_uuid}}','unlock')" class="button">Unlock</button>
+        <button id="lock" onclick="change_state_findlock('{{findlock.device_uuid}}','lock')" class="button">Lock</button>
+        
+        <h1>Peoples with access to {{findlock.friendly_name}}</h1>
+        <form action="/user/add_friend">
+            Friendcode:
+            <input type="text" name="friendcode">
+            <input type="hidden" name="device_uuid" value="{{findlock.device_uuid}}">
+            <input type="submit" class="button" value="Add a friend">
+        </form>
+        <p>There are {{findlock.FindlockPermission.allowed_uuids_count()}} users with access!</p>
+        <table>
+            <tr>
+                <th>no.</th>
+                <th>Name</th>
+                <th>Options</th>
+            </tr>
+            {% for n in range(findlock.FindlockPermission.allowed_uuids_count()) %}
+            <tr>
+                <td>{{n}}</td>
+                {% if findlock.FindlockPermission.allowed_uuids[n] == session.User.user_uuid %}
+                <td class="permission">{{findlock.FindlockPermission.allowed_uuids[n]}}</td>
+                <td><a>You</a></td>
+                {% else %}
+                <td class="permission">{{findlock.FindlockPermission.allowed_uuids[n]}}</td>
+                <td><a class="button">Delete</a></td>
+                {% endif %}
+
+                
+            </tr>
+            {% endfor %}
+        </table>
+        <h1>Last 10 locations for {{findlock.friendly_name}}</h1>
+        <p>There are {{findlock.GpsLocationHistory.get_location_count()}} saved locations!</p>
+        <table>
+            <tr>
+                <th>no.</th>
+                <th>lat</th>
+                <th>lng</th>
+                <th>time</th>
+            </tr>
+            {% for n in range(findlock.GpsLocationHistory.get_location_count())%}
+            <tr>
+                <td>{{n}}</td>
+                <td>{{findlock.GpsLocationHistory.get_location(n).lat}}</td>
+                <td>{{findlock.GpsLocationHistory.get_location(n).lng}}</td>
+                <td class="filoUnixTime">{{findlock.GpsLocationHistory.get_location(n).time}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script src="/static/js/filoNameGetter.js"></script>
+    <script src="/static/js/filoApi.js"></script>
+    <script src="/static/js/filoTimeConvert.js"></script>
+    <script>
+        start_query_timer('{{findlock.device_uuid}}');
+    </script>
+    
+</body>
+
+</html>

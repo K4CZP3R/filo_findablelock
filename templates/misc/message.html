@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% with title="Message" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<head>
+    <meta http-equiv="refresh" content="{{r_time}}; url={{r_url}}" />
+</head>
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h1>Message:</h1>
+        <h2><b>{{title}}</b></h2>
+        <h3><i>{{content}}</i></h3>
+        {% include '_base_footer.html' %}
+    </div>
+</body>
+
+</html>

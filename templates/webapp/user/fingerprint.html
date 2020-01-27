@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Filo - Fingerprints"%} {% include 'webapp/_base_head_user.html' %} {% endwith %}
+
+</head>
+
+<body ontouchstart="">
+    <div class="background"></div>
+
+    <div>
+        <img class="Logo" src="/static/images/FIloLogo.svg" />
+    </div>
+
+    <div class="fingerbackground"></div>
+
+    <div id="container">
+        {% for n in list_of_names %}
+        <div class="fingerscan">
+          <p class="p-sub fp-text">{{n}}</p>
+        </div>
+        {% endfor %}
+      </div>
+  
+
+    <div class="menubar">
+        <img class="menu-icon onclick_home" src="/static/images/menu-map.svg" />
+        <img class="menu-icon onclick_fingerprint" src="/static/images/menu-finger.svg" />
+        <img class="menu-icon onclick_profile" src="/static/images/menu-profile.svg" />
+        <img class="menu-icon onclick_lock" src="/static/images/menu-lock.svg" />
+        <img class="menu-icon onclick_light" src="/static/images/menu-led.svg" />
+        <img class="menu-icon onclick_settings" src="/static/images/menu-settings.svg" />
+    </div>
+
+    {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

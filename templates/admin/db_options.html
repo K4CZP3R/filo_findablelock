@@ -1,0 +1,16 @@
+<html>
+{% with title="Database options" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h2>
+            <a class="button" href="{{AdminRoutes.wipe_users()}}">Wipe Users</a>
+            <a class="button" href="{{AdminRoutes.wipe_findlocks()}}">Wipe Findlocks</a>
+        </h2>
+    </div>
+</body>
+
+</html>

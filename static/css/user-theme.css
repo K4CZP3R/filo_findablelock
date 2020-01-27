@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan&display=swap");
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: "Baloo Bhaijaan";
+    color: #134d50;
+    margin: 0;
+    padding: 0;
+}
+
+#shareFilo {
+    float: left;
+}
+
+.submit.round {
+    margin: 10px;
+    float: left;
+    width: 70px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #4b9999;
+}
+
+.submit.round:hover {
+    background-color: #286d6d;
+}
+
+.submit-text {
+    text-align: center;
+    line-height: 50px;
+}
+
+.p-main {
+    color: #0e4c51;
+    font-weight: bold;
+    text-align: center;
+    line-height: 55px;
+    font-size: 16px;
+}
+
+.p-sub {
+    color: #0e4c51;
+}
+
+.title {
+    margin-top: 15px;
+    text-align: center;
+    color: #4b9999;
+}
+
+.info-wrap {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+}
+
+.header-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    margin-top: 15px;
+    width: 100%;
+    height: 200px;
+    background-color: #aed1d1;
+}
+
+.button-text {
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color: white;
+}
+
+.edit {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #1d5f62;
+}
+
+.header-icon {
+    filter: invert(27%) sepia(69%) saturate(442%) hue-rotate(134deg) brightness(95%) contrast(88%);
+    position: absolute;
+    margin: auto;
+    margin-top: 20px;
+    left: 0;
+    right: 0;
+    width: 75px;
+}
+
+.share-wrap {
+    margin: 25px;
+}
+
+input {
+    border: 1px solid #1d5f62;
+    margin-top: 10px;
+    width: 60%;
+    height: 40px;
+    border-radius: 40px;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    padding: 25px;
+    color: darkcyan;
+}
+
+.settings {
+    margin-top: 15px;
+}
+
+.element {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 65px;
+    background-color: #bdd8d8ac;
+}
+
+.element-sub {
+    position: absolute;
+    bottom: 60px;
+    margin-bottom: 10px;
+    margin-left: 55%;
+    width: 40%;
+    height: 65px;
+    background-color: #bdd8d8ac;
+}
+
+.settings-info-wrap {
+    padding: 25px;
+}
+
+.settings-icon {
+    margin-right: 20px;
+    float: left;
+}
+
+.address {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.distance {
+    font-size: 14px;
+    margin-top: 0px;
+    margin-left: 15px;
+}
+
+.background {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.current-location {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    width: 90%;
+    height: 65px;
+    border-radius: 15px;
+    background-color: rgb(208, 228, 228);
+}
+
+.Logo {
+    z-index: 1;
+    position: absolute;
+    top: 8px;
+    left: 9px;
+}
+
+#map {
+    width: 100%;
+    height: 80vh;
+    background-color: grey;
+}
+
+.menubar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+}
+
+.menu-icon {
+    flex-grow: 1;
+    margin: 15px 12px;
+    max-width: 80px;
+    max-height: 40px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.menu-icon:hover {
+    transform: scale(1.2);
+}
+
+.edit:hover {
+    background-color: #134d50;
+}
+
+.fingerbackground {
+    z-index: -1;
+    width: 100%;
+    height: 400;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    right: 0;
+    bottom: 0;
+    background-color: #107676;
+    background-image: linear-gradient( 151deg, #388f8e 0%, #317779 50%, #0b4c52 100%);
+}
+
+#container {
+    position: absolute;
+    margin: auto;
+    top: 250px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.fp-text {
+    margin-left: 25px;
+    line-height: 45px;
+  }
+  
+.fingerscan {
+    width: 100%;
+    height: 44px;
+    background-color: white;
+    border-radius: 55px;
+    margin-top: 5px;
+}
+
+.button.add {
+    width: 200px;
+    height: 55px;
+    border-radius: 58px;
+    background-color: white;
+    position: absolute;
+    margin: auto;
+    top: 20%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.type {
+    color: #0b4c52;
+}

@@ -1,0 +1,24 @@
+<html>
+{% with title="Add GPS location" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<body>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h1>Add GPS entry</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="latInput">Lat</label>
+                <input type="text" name="latInput" id="latInput">
+                <label for="lngInput">Lng</label>
+                <input type="text" name="lngInput" id="lngInput">
+            </div>
+            <button class="button" type="submit">Submit</button>
+        </form>
+        {% include '_base_footer.html' %}
+    </div>
+
+</body>
+
+</html>

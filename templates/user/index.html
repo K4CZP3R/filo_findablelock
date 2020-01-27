@@ -1,0 +1,57 @@
+<html>
+{% with title="User landing" %}
+{% include '_base_head_old.html' %}
+{% endwith %}
+
+<head>
+    <meta name="google-signin-client_id"
+        content="61071107086-i8cph2ic9u5qd99gt53nm1snhsdcbkb1.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+    <script>
+        function init() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
+            })
+        }
+    </script>
+    <script src="/static/js/filoGoogle.js"></script>
+</head>
+
+<body>
+    <script src="/static/js/filoFacebook.js"></script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    {% include '_base_header.html' %}
+    <div class="center">
+        <h1>Info</h1>
+        <p>
+            <b>Picture: </b><img style="width: 64px;" src="{{Session.User.avatar_link}}" /><br>
+            <b>Name: </b>{{Session.User.first_name}}<br>
+            <b>Friendcode: </b>{{Session.User.first_name}}#{{Session.User.friend_code}}<br>
+            <b>Admin: </b>{{Session.User.is_admin}}
+        </p>
+
+        <br>
+        {% if Session.User.is_admin %}
+        <h3><a class="button" href="/admin">Admin panel</a></h3>
+        {% endif %}
+        <h3><a class="button" href="/user/new_device">Pair new findlock</a></h3>
+        <br>
+        <table>
+            <tr>
+                <th>Findlock unieke ID</th>
+                <th>Opties</th>
+            </tr>
+            {% for f in findlocks %}
+            <tr>
+                <td>{{f.device_uuid}}</td>
+                <td><a class="button" href="/user/device/{{f.device_uuid}}">Beheer</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <h3>Wanna logout, click <a class="button" onclick="filoGoogle_onSignOut('{{AuthRoutes.logout.route_path}}');">here</a>.
+        </h3>
+    </div>
+</body>
+
+</html>

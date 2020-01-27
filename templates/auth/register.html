@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Register"%}
+    {% include '_base_head.html' %}
+    {% endwith %}
+</head>
+
+<body ontouchstart="">
+    <div class="background"></div>
+    <div class="login-details">
+        <h2 class="h2-main">Maak account</h2>
+        <form method="POST">
+            <input type="email" name="emailInput" placeholder="Email" />
+            <input type="password" name="passwordInput" placeholder="Wachtwoord" />
+            <input type="password" name="passwordInput2" placeholder="Herhaal wachtwoord" />
+            <button class="button white onclick_user_update">
+                <p class="p-main">
+                    Maak account
+                </p>
+            </button>
+            <!--<p class="p-onjuist">Geef een geldige email op</p>
+            <p class="p-onjuist">Wachtwoorden zijn verschillend</p>
+            <p class="p-onjuist">Email bestaat al</p>
+            Kijk auth.html opmerking!
+            -->
+        </form>
+    </div>
+    
+    <p class="p-sub" onclick="location.href = '../auth.html';">
+        Ik heb al een account
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Filo - Lock/Unlock"%} {% include 'webapp/_base_head.html' %} {% endwith %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+</head>
+
+<body ontouchstart="">
+    <div class="background-popup"></div>
+
+    <div class="whitebackground">
+        <img class="back onclick_home" src="/static/images/back-icon.svg" />
+        <img class="slot" src="/static/images/slot.svg" />
+        <div class="text-wrap">
+            <p class=question> Unlock your bike manually</p>
+        </div>
+
+        <div class="buttonsSlot">
+            <div class="unlock" onclick="change_state_findlock('{{device_uuid}}','unlock')">
+                <p class="p-main-button">Unlock</p>
+            </div>
+            <div class="lock" onclick="change_state_findlock('{{device_uuid}}','lock')">
+                <p class="p-main-button">Lock</p>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/filoApi.js"></script>
+    {% include 'webapp/_base_footer.html' %}
+</body>
+
+</html>

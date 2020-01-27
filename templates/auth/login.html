@@ -1,0 +1,40 @@
+<!--
+    61071107086-9lb89b6sfbvhfu7f15gsia8sqpuubf1m.apps.googleusercontent.com
+    bCHBOXsPyeT7TzYgihCuABZ_
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% with title="Login"%}
+    {% include '_base_head.html' %}
+    {% endwith %}
+    <meta name="google-signin-client_id"
+        content="61071107086-i8cph2ic9u5qd99gt53nm1snhsdcbkb1.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="/static/js/filoGoogle.js"></script>
+</head>
+
+<body ontouchstart="">
+    <div class="background"></div>
+    <div class="login-details">
+        <h2 class="h2-main">Login</h2>
+        <form method="POST">
+            <input type="email" name="emailInput" placeholder="Email" />
+            <input type="password" name="passwordInput" placeholder="Wachtwoord" />
+            <button class="button white">
+                <p class="p-main">Login</p>
+            </button>
+        </form>
+    </div>
+    <div class="login-details">
+        <h2 class="h2-main">Login met sociale media</h2>
+        <div class="g-signin2" data-onsuccess="filoGoogle_onSignIn"></div>
+    </div>
+    <p class="p-sub" onclick="location.href = '{{AuthRoutes.register.route_path}}';">
+        Maak een account
+    </p>
+</body>
+
+</html>
